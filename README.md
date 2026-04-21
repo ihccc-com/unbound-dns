@@ -246,6 +246,8 @@ server {
     # DoH endpoint (RFC 8484)
     # grpc_pass is required because Unbound's DoH module (libnghttp2)
     # strictly requires HTTP/2 and rejects HTTP/1.1 connections.
+    # NGINX's proxy_pass only supports HTTP/1.x, so grpc_pass is used
+    # to establish an HTTP/2 cleartext (h2c) connection to the backend.
     location /dns-query {
         grpc_pass grpc://127.0.0.1:8443;
         grpc_set_header Content-Type \$content_type;
