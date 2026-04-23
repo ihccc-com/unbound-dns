@@ -683,8 +683,8 @@ server:
     # 刷新时提供过期数据（零停机缓存）
     serve-expired: yes
     serve-expired-ttl: 86400
-    # 客户端超时（毫秒）: 1800ms 后若无上游响应则提供过期缓存
-    serve-expired-client-timeout: 1800
+    # 客户端超时（毫秒）: 500ms 后若无上游响应则提供过期缓存
+    serve-expired-client-timeout: 500
     serve-expired-reply-ttl: 30
 
     # 缓存最小/最大 TTL
